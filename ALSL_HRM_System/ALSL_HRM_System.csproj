@@ -1,0 +1,817 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{44F6A9B0-F1F4-41A0-8DAF-0BE4089A27A6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ALSL_HRM_System</RootNamespace>
+    <AssemblyName>ALSL_HRM_System</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\Chinthaka Wijethunga\Desktop\HRM Software\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>5</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>BA7E465693FC16B1C3EA503133A109964D94BE7D</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>ALSL_HRM_System_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="DevComponents.DotNetBar.Design">
+      <HintPath>C:\Users\Chinthaka Wijethunga\Desktop\DotNetBar\DevComponents.DotNetBar.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar2">
+      <HintPath>C:\Users\Chinthaka Wijethunga\Desktop\DotNetBar\DevComponents.DotNetBar2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.Instrumentation">
+      <HintPath>C:\Users\Chinthaka Wijethunga\Desktop\DotNetBar\DevComponents.Instrumentation.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.Instrumentation.Design">
+      <HintPath>C:\Users\Chinthaka Wijethunga\Desktop\DotNetBar\DevComponents.Instrumentation.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BackupAndRestore\DBConnectionBackup.cs" />
+    <Compile Include="BackupAndRestore\frmDBBackupRestore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BackupAndRestore\frmDBBackupRestore.Designer.cs">
+      <DependentUpon>frmDBBackupRestore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CrystalReportsLetters\ltrServiceExtendConfirmationLetter.cs">
+      <DependentUpon>ltrServiceExtendConfirmationLetter.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="CrystalReportsLetters\ltrInHouseLoanConfirmationLetter.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ltrInHouseLoanConfirmationLetter.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReportsLetters\ltrInHouseLoanRejectionLetter.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ltrInHouseLoanRejectionLetter.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReportsLetters\ltrLeaveConfirmationLetter.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ltrLeaveConfirmationLetter.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReportsLetters\ltrRetirementLetter.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ltrRetirementLetter.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReportsLetters\ltrRetirementRemindingLetter.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ltrRetirementRemindingLetter.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReportsLetters\ltrSalaryIncrementLetter.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ltrSalaryIncrementLetter.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReportsLetters\ltrSalaryIncrementRejectionLetter.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ltrSalaryIncrementRejectionLetter.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReportsLetters\ltrServiceExtendRejectionLetter.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ltrServiceExtendRejectionLetter.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReports\crEmployeeInHouseLoanRequestReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crEmployeeInHouseLoanRequestReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReports\crEmployeeLeaveTakingReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crEmployeeLeaveTakingReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReports\crEmployeeOnProbationReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crEmployeeOnProbationReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReports\crEmployeeResignationReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crEmployeeResignationReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReports\crEmployeeSalaryIncremenrRequestReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crEmployeeSalaryIncremenrRequestReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReports\crEmployeeServiceExtendRequestReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crEmployeeServiceExtendRequestReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReports\crEmployeeServiceLevelReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crEmployeeServiceLevelReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReports\crEmployeesToBeContinuedReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crEmployeesToBeContinuedReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReports\crEmployeesToBeRetiredReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crEmployeesToBeRetiredReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReports\crSelectedApplicantDetailReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crSelectedApplicantDetailReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DialogBoxes\dlgSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogBoxes\dlgSearch.Designer.cs">
+      <DependentUpon>dlgSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Forms\frmBankDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Forms\frmBankDetails.Designer.cs">
+      <DependentUpon>frmBankDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Forms\frmChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Forms\frmChangePassword.Designer.cs">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Forms\frmDepartmentDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Forms\frmDepartmentDetails.Designer.cs">
+      <DependentUpon>frmDepartmentDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Forms\frmDesignationDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Forms\frmDesignationDetails.Designer.cs">
+      <DependentUpon>frmDesignationDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Forms\frmDocumentViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Forms\frmDocumentViewer.Designer.cs">
+      <DependentUpon>frmDocumentViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Forms\frmLeaveDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Forms\frmLeaveDetails.Designer.cs">
+      <DependentUpon>frmLeaveDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Forms\frmLeaveTypeDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Forms\frmLeaveTypeDetails.Designer.cs">
+      <DependentUpon>frmLeaveTypeDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Forms\frmLoanDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Forms\frmLoanDetails.Designer.cs">
+      <DependentUpon>frmLoanDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Forms\frmLoanRequestDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Forms\frmLoanRequestDetails.Designer.cs">
+      <DependentUpon>frmLoanRequestDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Forms\frmLoanTypeDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Forms\frmLoanTypeDetails.Designer.cs">
+      <DependentUpon>frmLoanTypeDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Forms\frmLoginUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Forms\frmLoginUser.Designer.cs">
+      <DependentUpon>frmLoginUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Forms\frmMDIMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Forms\frmMDIMain.Designer.cs">
+      <DependentUpon>frmMDIMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Forms\frmPermenentEmployees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Forms\frmPermenentEmployees.Designer.cs">
+      <DependentUpon>frmPermenentEmployees.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Forms\frmQualificationReferenceDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Forms\frmQualificationReferenceDetails.Designer.cs">
+      <DependentUpon>frmQualificationReferenceDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Forms\frmResignationDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Forms\frmResignationDetails.Designer.cs">
+      <DependentUpon>frmResignationDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Forms\frmSalaryIncrementDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Forms\frmSalaryIncrementDetails.Designer.cs">
+      <DependentUpon>frmSalaryIncrementDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Forms\frmSalaryIncrementRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Forms\frmSalaryIncrementRequest.Designer.cs">
+      <DependentUpon>frmSalaryIncrementRequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Forms\frmSelectedApplicantInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Forms\frmSelectedApplicantInformation.Designer.cs">
+      <DependentUpon>frmSelectedApplicantInformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Forms\frmServiceExtendDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Forms\frmServiceExtendDetails.Designer.cs">
+      <DependentUpon>frmServiceExtendDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Forms\frmServiceExtendRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Forms\frmServiceExtendRequest.Designer.cs">
+      <DependentUpon>frmServiceExtendRequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Forms\frmSpecialRemark.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Forms\frmSpecialRemark.Designer.cs">
+      <DependentUpon>frmSpecialRemark.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Forms\frmSystemUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Forms\frmSystemUser.Designer.cs">
+      <DependentUpon>frmSystemUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Forms\frmVacancyData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Forms\frmVacancyData.Designer.cs">
+      <DependentUpon>frmVacancyData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Letters\dlgLetterGenerator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Letters\dlgLetterGenerator.Designer.cs">
+      <DependentUpon>dlgLetterGenerator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Letters\frmLetterWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Letters\frmLetterWindow.Designer.cs">
+      <DependentUpon>frmLetterWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Reports\frmReportWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Reports\frmReportWindow.Designer.cs">
+      <DependentUpon>frmReportWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Reports\dlgReportGenerator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Reports\dlgReportGenerator.Designer.cs">
+      <DependentUpon>dlgReportGenerator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PublicClasses\DBConnection.cs" />
+    <EmbeddedResource Include="BackupAndRestore\frmDBBackupRestore.resx">
+      <DependentUpon>frmDBBackupRestore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReportsLetters\ltrServiceExtendConfirmationLetter.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ltrServiceExtendConfirmationLetter.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReportsLetters\ltrInHouseLoanConfirmationLetter.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ltrInHouseLoanConfirmationLetter.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReportsLetters\ltrInHouseLoanRejectionLetter.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ltrInHouseLoanRejectionLetter.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReportsLetters\ltrLeaveConfirmationLetter.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ltrLeaveConfirmationLetter.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReportsLetters\ltrRetirementLetter.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ltrRetirementLetter.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReportsLetters\ltrRetirementRemindingLetter.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ltrRetirementRemindingLetter.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReportsLetters\ltrSalaryIncrementLetter.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ltrSalaryIncrementLetter.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReportsLetters\ltrSalaryIncrementRejectionLetter.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ltrSalaryIncrementRejectionLetter.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReportsLetters\ltrServiceExtendRejectionLetter.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ltrServiceExtendRejectionLetter.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReports\crEmployeeInHouseLoanRequestReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crEmployeeInHouseLoanRequestReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReports\crEmployeeLeaveTakingReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crEmployeeLeaveTakingReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReports\crEmployeeOnProbationReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crEmployeeOnProbationReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReports\crEmployeeResignationReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crEmployeeResignationReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReports\crEmployeeSalaryIncremenrRequestReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crEmployeeSalaryIncremenrRequestReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReports\crEmployeeServiceExtendRequestReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crEmployeeServiceExtendRequestReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReports\crEmployeeServiceLevelReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crEmployeeServiceLevelReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReports\crEmployeesToBeContinuedReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crEmployeesToBeContinuedReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReports\crEmployeesToBeRetiredReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crEmployeesToBeRetiredReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReports\crSelectedApplicantDetailReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crSelectedApplicantDetailReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DialogBoxes\dlgSearch.resx">
+      <DependentUpon>dlgSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Forms\frmBankDetails.resx">
+      <DependentUpon>frmBankDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Forms\frmChangePassword.resx">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Forms\frmDepartmentDetails.resx">
+      <DependentUpon>frmDepartmentDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Forms\frmDesignationDetails.resx">
+      <DependentUpon>frmDesignationDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Forms\frmDocumentViewer.resx">
+      <DependentUpon>frmDocumentViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Forms\frmLeaveDetails.resx">
+      <DependentUpon>frmLeaveDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Forms\frmLeaveTypeDetails.resx">
+      <DependentUpon>frmLeaveTypeDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Forms\frmLoanDetails.resx">
+      <DependentUpon>frmLoanDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Forms\frmLoanRequestDetails.resx">
+      <DependentUpon>frmLoanRequestDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Forms\frmLoanTypeDetails.resx">
+      <DependentUpon>frmLoanTypeDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Forms\frmLoginUser.resx">
+      <DependentUpon>frmLoginUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Forms\frmMDIMain.resx">
+      <DependentUpon>frmMDIMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Forms\frmPermenentEmployees.resx">
+      <DependentUpon>frmPermenentEmployees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Forms\frmQualificationReferenceDetails.resx">
+      <DependentUpon>frmQualificationReferenceDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Forms\frmResignationDetails.resx">
+      <DependentUpon>frmResignationDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Forms\frmSalaryIncrementDetails.resx">
+      <DependentUpon>frmSalaryIncrementDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Forms\frmSalaryIncrementRequest.resx">
+      <DependentUpon>frmSalaryIncrementRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Forms\frmSelectedApplicantInformation.resx">
+      <DependentUpon>frmSelectedApplicantInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Forms\frmServiceExtendDetails.resx">
+      <DependentUpon>frmServiceExtendDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Forms\frmServiceExtendRequest.resx">
+      <DependentUpon>frmServiceExtendRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Forms\frmSpecialRemark.resx">
+      <DependentUpon>frmSpecialRemark.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Forms\frmSystemUser.resx">
+      <DependentUpon>frmSystemUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Forms\frmVacancyData.resx">
+      <DependentUpon>frmVacancyData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Letters\dlgLetterGenerator.resx">
+      <DependentUpon>dlgLetterGenerator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Letters\frmLetterWindow.resx">
+      <DependentUpon>frmLetterWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Reports\frmReportWindow.resx">
+      <DependentUpon>frmReportWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Reports\dlgReportGenerator.resx">
+      <DependentUpon>dlgReportGenerator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="ALSL_HRM_System_TemporaryKey.pfx" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="AxAcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>7</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Outlook">
+      <Guid>{00062FFF-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>9</VersionMajor>
+      <VersionMinor>5</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddNew.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\New.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Populate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HomeExit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logout.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Loan Details.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Loan Request.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Loan Type.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Permanent Employee.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Qualification Reference.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Resigned Emp Report.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Retirement Letter.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Retirement Reminding Letter.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Salary Increment Letter.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Salary Increment Rejection Letter.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Salary Increment Req Report.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Salary Increment Request.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Salary Increment.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Selected Applicant Report.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Selected Applicant.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Service Extend Confirmation Letter.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Service Extend Rejection Letter.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Service Extend Request Report.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Service Extend Request.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Service Extend.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Special remarks.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\System User details.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\User manual.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vacancy.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\About the sw.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bank Details.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Change Password.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Department Details.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Designation Details.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Emp Designation.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Emp Leave Taking Report.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Emp Leave.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Emp OnProbation Report.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Emp Service Level Report.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Emp To Be Continued Report.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\help.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\InHouse Loan Confirmation Letter.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\InHouse Loan Rejection Letter.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\InHouse Loan Request Report.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Leave Confirmation Letter.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Leave Type.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HRM-bg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EmployeeRegDetails.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reset.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Create New Profile Change Password.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Backup or Restore.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
