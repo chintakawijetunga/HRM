@@ -27,7 +27,7 @@ namespace ALSL_HRM_System.Forms
         bool checkChange = false;
         bool check = false;
         frmMDIMain form;
-
+		// Testing
         #endregion
 
         #region Constructors
